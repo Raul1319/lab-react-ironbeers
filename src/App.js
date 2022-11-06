@@ -12,6 +12,17 @@ import { useEffect, useState } from 'react'
 function App() {
 
   const [beers, setBeers] = useState([])
+
+  useEffect(() =>{
+    axios.get('https://ih-beers-api2.herokuapp.com/beers')
+    .then((response) =>{
+      setBeers(response.data)
+    }).catch((err) =>{
+      
+    })
+
+  },[])
+  
   return (
     <div className="App">
 
